@@ -1,36 +1,32 @@
 pipeline {
-    agent any  // Run on any available agent
+    agent any
 
     stages {
         stage('Checkout') {
             steps {
-                // Clone the source code from Git
-                git 'https://github.com/your-username/your-repo.git'
+                git url: 'https://github.com/Aniket-Naskulwar-2003/Jenkins.git', credentialsId: 'id'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'Building the application...'
-                // Example build command
-                sh 'echo Build successful!'
+                echo 'Build stage running...'
+                sh 'echo Building...'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running tests...'
-                // Example test command
-                sh 'echo All tests passed!'
+                echo 'Testing stage running...'
+                sh 'echo Testing...'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo "Deploying ${APP_NAME}..."
-                // Example deploy command
-                sh 'echo Deployment complete!'
+                echo 'Deploying app...'
+                sh 'echo Deploy complete!'
             }
         }
     }
-}  
+}
