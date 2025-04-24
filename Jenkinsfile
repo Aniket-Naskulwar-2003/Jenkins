@@ -1,11 +1,6 @@
 pipeline {
     agent any  // Run on any available agent
 
-    environment {
-        // Define environment variables if needed
-        APP_NAME = 'my-app'
-    }
-
     stages {
         stage('Checkout') {
             steps {
